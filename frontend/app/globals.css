@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Deep neon green highlights */
+  --color-primary-50: #d4f7e2;
+  --color-primary-100: #a9efc5;
+  --color-primary-500: #00e676; /* Bright neon green */
+  --color-primary-600: #00c853; /* Darker neon green */
+  --color-primary-900: #003314;
+  
+  /* Dark earth tones */
+  --color-earth-50: #111814;
+  --color-earth-100: #1a241e;
+  --color-earth-200: #2b3a31;
+  --color-earth-300: #42574a;
+  --color-earth-400: #5f7a6a;
+  --color-earth-500: #82a893;
+  --color-earth-600: #9cbca9;
+  --color-earth-700: #b5d1c0;
+  --color-earth-800: #d1e3d8;
+  --color-earth-900: #f0f7f3;
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+:root {
+  /* Forcing a dark theme by default based on user request */
+  --background: #0a0e0c;
+  --foreground: #f0f7f3;
+  --card: #111814;
+  --card-foreground: #f0f7f3;
+  --border: #1f2e25;
+}
+
+@media (prefers-color-scheme: light) {
+  /* If they force light mode, we keep it dark as per request, or just slightly less dark */
+  :root {
+    --background: #0d1210;
+    --foreground: #f0f7f3;
+    --card: #161e1a;
+    --card-foreground: #f0f7f3;
+    --border: #24362b;
+  }
+}
+
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
